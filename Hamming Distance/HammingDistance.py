@@ -7,12 +7,12 @@ def hamming_distance(x, y):
     """
     # Use a logical XOR to return '1' where there's a difference.
     xor_bin = x ^ y
-    count = 0
+    distance = 0
     # While we still have a number to work through.
     while xor_bin > 0:
-        count += xor_bin & 1 # Where 'z' is 1.
+        distance += xor_bin & 1 # Where 'z' is 1.
         xor_bin >>= 1 # Shift to the next bit.
-    return count
+    return distance
 
 # Hefty Unit Test
 X = 680142203
