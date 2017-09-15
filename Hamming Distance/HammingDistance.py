@@ -1,26 +1,20 @@
 """Hamming Distance Calculator"""
-
-def hammingDistance(x, y):
+def hamming_distance(x, y):
     """
     :type x: int
     :type y: int
     :rtype: int
     """
-    # Format to 8 binary bits:
-        # {} places a variable into a string.
-        # 0 takes the variable at argument position 0.
-        # : adds formatting options for this variable.
-        #   - (otherwise it would represent the decimal x or y).
-        # 08 formats the number to eight digits zero-padded on the left.
-        # b converts the number to its binary representation.
-    str_x = '{0:08b}'.format(x)
-    str_y = '{0:08b}'.format(y)
+    # Use a logical XOR to return '1' where there's a difference.
+    xor_bin = x ^ y
+    count = 0
+    # While we still have a number to work through.
+    while xor_bin > 0:
+        count += xor_bin & 1 # Where 'z' is 1.
+        xor_bin >>= 1 # Shift to the next bit.
+    return count
 
-    # If of equal length...
-    assert len(str_x) == len(str_y)
-    # Pass both strings to zip. Iterate through and tally any differences.
-    return sum(el_1 != el_2 for el_1, el_2 in zip(str_x, str_y))
-
-X = 1
-Y = 4
-print(hammingDistance(X, Y))
+# Hefty Unit Test
+X = 680142203
+Y = 1111953568
+print(hamming_distance(X, Y))
