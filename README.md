@@ -4,7 +4,7 @@ Problems and solutions.
 # Table of Contents
 * [Big Countries](#big-countries)
 * [Hamming Distance](#hamming-distance)
-* [Judge Route Circle] (#judge-route-circle)
+* [Judge Route Circle](#judge-route-circle)
 * [Two Sum](#two-sum)
 
 
