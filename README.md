@@ -1,7 +1,7 @@
 # LeetCode
 Problems and solutions.
 
-# Table of Contents
+## Table of Contents
 * [Big Countries](#big-countries)
 * [Hamming Distance](#hamming-distance)
 * [Judge Route Circle](#judge-route-circle)
@@ -9,7 +9,7 @@ Problems and solutions.
 
 
 <a name="big-countries"></a>
-# Big Countries
+## Big Countries
 There is a table World:
 
 A country is big if it has an area of bigger than 3 million (3000000) square km or a population of more than 25 million (25000000).
@@ -17,22 +17,22 @@ A country is big if it has an area of bigger than 3 million (3000000) square km 
 Write a SQL solution to output big countries' **name**, **population** and **area**.
 
 <a name="hamming-distance"></a>
-# Hamming Distance
+## Hamming Distance
 
 The Hamming distance between two integers is the number of positions at which the corresponding bits are different. Given two integers x and y, calculate the Hamming distance.
 
 **Example:**
 
 Input: x = 1, y = 4
-
+```
 1   (0 0 0 1)
 
 4   (0 1 0 0)
-
+```
 Two bits differ. Therefore, the Output/Hamming distance is 2.
 
 <a name="judge-route-circle"></a>
-# Judge Route Circle
+## Judge Route Circle
 
 Initially, there is a Robot at position (0, 0). Given a sequence of its moves, judge if this robot makes a circle, which means it moves back to the original place.
 
@@ -50,7 +50,7 @@ Output: false
 ```
 
 <a name="two-sum"></a>
-# Two Sum
+## Two Sum
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
