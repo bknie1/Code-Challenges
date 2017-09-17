@@ -4,6 +4,7 @@ Problems and solutions.
 # Table of Contents
 * [Big Countries](#big-countries)
 * [Hamming Distance](#hamming-distance)
+* [Judge Route Circle] (#judge-route-circle)
 * [Two Sum](#two-sum)
 
 
@@ -29,6 +30,24 @@ Input: x = 1, y = 4
 4   (0 1 0 0)
 
 Two bits differ. Therefore, the Output/Hamming distance is 2.
+
+<a name="judge-route-circle"></a>
+# Judge Route Circle
+
+Initially, there is a Robot at position (0, 0). Given a sequence of its moves, judge if this robot makes a circle, which means it moves back to the original place.
+
+The move sequence is represented by a string. And each move is represent by a character. The valid robot moves are R (Right), L (Left), U (Up) and D (down). The output should be true or false representing whether the robot makes a circle.
+
+**Example 1:**
+```
+Input: "UD"
+Output: true
+```
+**Example 2:**
+```
+Input: "LL"
+Output: false
+```
 
 <a name="two-sum"></a>
 # Two Sum
