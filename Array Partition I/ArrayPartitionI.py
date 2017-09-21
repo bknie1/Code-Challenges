@@ -12,6 +12,7 @@ def arrayPairSum(nums):
     # And it takes every other character (2)
     """
     # Sorts the string but only keeps every other value.
+    # The last slice parameter is called a stride (2 here).
     # This emulates what would have been our min pairing.
     # The left value is always less than the right.
     # So we grab the first element from the first two would be pairs.
