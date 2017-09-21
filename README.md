@@ -2,15 +2,35 @@
 Problems and solutions.
 
 ## Table of Contents
+* [Array Partition I](#array-partition-i)
 * [Big Countries](#big-countries)
 * [Binary Tree Merge](#binary-tree-merge)
 * [Hamming Distance](#hamming-distance)
 * [Judge Route Circle](#judge-route-circle)
 * [Two Sum](#two-sum)
 
+<a name="array-partition-i"></a>
+## Array Partition I
+
+Given an array of 2n integers, your task is to group these integers into n pairs of integer, say (a1, b1), (a2, b2), ..., (an, bn) which makes sum of min(ai, bi) for all i from 1 to n as large as possible.
+
+**Example 1:**
+```
+Input: [1,4,3,2]
+Output: 4
+```
+**Explanation:** n is 2, and the maximum sum of pairs is 4 = min(1, 2) + min(3, 4).
+
+**Note:**
+n is a positive integer, which is in the range of [1, 10000].
+All the integers in the array will be in the range of [-10000, 10000].
+
+**Personal Clarification:**
+You have to capture the min value from each pair and find the min sum. Above, the minimum values are 1 from the first pair and 3 from the second pair. We don't bother considering the other two because we know there is no way their sum would be higher; especially if we consider sorting the values first.
 
 <a name="big-countries"></a>
 ## Big Countries
+
 There is a table World:
 
 A country is big if it has an area of bigger than 3 million (3000000) square km or a population of more than 25 million (25000000).
