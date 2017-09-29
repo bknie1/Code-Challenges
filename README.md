@@ -5,6 +5,7 @@ Problems and solutions.
 * [Array Partition I](#array-partition-i)
 * [Big Countries](#big-countries)
 * [Binary Tree Merge](#binary-tree-merge)
+* [Find the Median of Two Sorted Arrays](#median-of-two-sorted)
 * [Hamming Distance](#hamming-distance)
 * [Judge Route Circle](#judge-route-circle)
 * [Two Sum](#two-sum)
@@ -36,6 +37,26 @@ There is a table World:
 A country is big if it has an area of bigger than 3 million (3000000) square km or a population of more than 25 million (25000000).
 
 Write a SQL solution to output big countries' **name**, **population** and **area**.
+
+<a name="median-of-two-sorted"></a>
+## Find the Median of Two Sorted Arrays
+There are two sorted arrays nums1 and nums2 of size m and n respectively.
+
+Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
+
+# Example 1:
+```
+nums1 = [1, 3]
+nums2 = [2]
+```
+The median is 2.0
+
+# Example 2:
+```
+nums1 = [1, 2]
+nums2 = [3, 4]
+```
+The median is (2 + 3)/2 = 2.5
 
 <a name="hamming-distance"></a>
 ## Hamming Distance
