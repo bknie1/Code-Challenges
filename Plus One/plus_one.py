@@ -1,6 +1,6 @@
 """Given a non-negative list representing an integer, add 1 to that integer."""
 # METHODS #######################################################################
-def plusOne(digits):
+def plus_one(digits):
     """
     :type digits: List[int]
     :rtype: List[int]
@@ -26,7 +26,7 @@ TEST_2 = [3, 0, 0, 0]
 TEST_3 = [9]
 TEST_4 = [9, 9, 9]
 
-print("1:", plusOne(TEST_1))
-print("2:", plusOne(TEST_2))
-print("3:", plusOne(TEST_3))
-print("4:", plusOne(TEST_4))
+print("1:", plus_one(TEST_1))
+print("2:", plus_one(TEST_2))
+print("3:", plus_one(TEST_3))
+print("4:", plus_one(TEST_4))
