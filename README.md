@@ -10,6 +10,7 @@ Problems and solutions.
 * [Find the Median of Two Sorted Arrays](#median-of-two-sorted)
 * [Hamming Distance](#hamming-distance)
 * [Judge Route Circle](#judge-route-circle)
+* [Plus One](#plus-one)
 * [Reverse Integer](#reverse-integer)
 * [Two Sum](#two-sum)
 * [Valid Parentheses](#valid-parentheses)
@@ -110,6 +111,18 @@ Output: true
 ```
 Input: "LL"
 Output: false
+```
+
+<a name="plus-one"></a>
+## Plus One
+
+Given a non-negative integer represented as a non-empty array of digits, plus one to the integer. You may assume the integer do not contain any leading zero, except the number 0 itself. The digits are stored such that the most significant digit is at the head of the list.
+
+**Example 1:**
+Given 9999, we would add one and output the result.
+```
+Input: [9, 9, 9, 9]
+Output: [1, 0, 0, 0, 0]
 ```
 
 <a name="reverse-integer"></a>
