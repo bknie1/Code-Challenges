@@ -12,17 +12,23 @@ def is_valid(test):
     Replaces all valid pairings with empty strings.
     If there's a remaining length it means there was an invalid pair.
     """
-    test = test.replace("()", "")
-    test = test.replace("[]", "")
-    test = test.replace("{}", "")
-
     length = len(test)
-    if length <= 0:
-        return True # Everything (valid pairs) replaced, nothing left.
-    return False # There's a remaining length. Not everything was replaced.
+    while length != 0 and length % 2 == 0:
+        test = test.replace("()", "")
+        test = test.replace("[]", "")
+        test = test.replace("{}", "")
+
+        if length > len(test): # Accounts for replaced values.
+            length = len(test)
+        else:               # If no change, then we're out of text.
+            length = 0
+        return True         # Everything (valid pairs) replaced, nothing left.
+    return False            # There's a remaining length. Not everything was replaced.
 
 TEST_1 = "(){}[]{}()[]"
 TEST_2 = "()[]{]}([})"
+TEST_3 = "([])"
 
 print(is_valid(TEST_1))
 print(is_valid(TEST_2))
+print(is_valid(TEST_3))
