@@ -9,6 +9,7 @@ Problems and solutions.
 * [Hamming Distance](#hamming-distance)
 * [Judge Route Circle](#judge-route-circle)
 * [Two Sum](#two-sum)
+* [Valid Parentheses](#valid-parentheses)
 
 <a name="array-partition-i"></a>
 ## Array Partition I
@@ -121,3 +122,10 @@ You may assume that each input would have exactly one solution, and you may not 
   ```python
   return [0, 1]
   ```
+
+<a name="valid-parentheses"></a>
+## Valid Parentheses
+
+Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
+
+The brackets must close in the correct order, "()" and "()[]{}" are all valid but "(]" and "([)]" are not.
