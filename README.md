@@ -7,11 +7,11 @@ Problems and solutions.
 * [Array Partition I](#array-partition-i)
 * [Big Countries](#big-countries)
 * [Binary Tree Merge](#binary-tree-merge)
-* [Find the Median of Two Sorted Arrays](#median-of-two-sorted) ***- G***
+* [Find the Median of Two Sorted Arrays](#median-of-two-sorted)
 * [Hamming Distance](#hamming-distance)
-* [Judge Route Circle](#judge-route-circle) ***- G***
+* [Judge Route Circle](#judge-route-circle)
 * [Two Sum](#two-sum)
-* [Valid Parentheses](#valid-parentheses) ***- G***
+* [Valid Parentheses](#valid-parentheses)
 
 ## Google Preparation
 
