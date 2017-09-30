@@ -1,12 +1,6 @@
 # LeetCode
 Problems and solutions.
 
-#### Interview Flags:
-  - *'A': Amazon*
-  - *'F': Facebook*
-  - *'G': Google*
-  - *'L': LinkedIn*
-
 ## Table of Contents
 
   
@@ -50,7 +44,7 @@ A country is big if it has an area of bigger than 3 million (3000000) square km 
 Write a SQL solution to output big countries' **name**, **population** and **area**.
 
 <a name="median-of-two-sorted"></a>
-## Find the Median of Two Sorted Arrays ***- G***
+## Find the Median of Two Sorted Arrays
 There are two sorted arrays nums1 and nums2 of size m and n respectively.
 
 Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
@@ -100,7 +94,7 @@ Output:
 ```
 
 <a name="judge-route-circle"></a>
-## Judge Route Circle ***- G***
+## Judge Route Circle
 
 Initially, there is a Robot at position (0, 0). Given a sequence of its moves, judge if this robot makes a circle, which means it moves back to the original place.
 
@@ -134,7 +128,7 @@ You may assume that each input would have exactly one solution, and you may not 
   ```
 
 <a name="valid-parentheses"></a>
-## Valid Parentheses ***- G***
+## Valid Parentheses
 
 Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 
