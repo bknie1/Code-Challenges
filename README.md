@@ -22,7 +22,7 @@ Problems and solutions.
 
 Given an array of 2n integers, your task is to group these integers into n pairs of integer, say (a1, b1), (a2, b2), ..., (an, bn) which makes sum of min(ai, bi) for all i from 1 to n as large as possible.
 
-**Example 1:**
+### Example 1:
 ```
 Input: [1,4,3,2]
 Output: 4
@@ -51,14 +51,14 @@ There are two sorted arrays nums1 and nums2 of size m and n respectively.
 
 Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
 
-# Example 1:
+### Example 1:
 ```
 nums1 = [1, 3]
 nums2 = [2]
 ```
 The median is 2.0
 
-# Example 2:
+### Example 2:
 ```
 nums1 = [1, 2]
 nums2 = [3, 4]
@@ -70,7 +70,7 @@ The median is (2 + 3)/2 = 2.5
 
 The Hamming distance between two integers is the number of positions at which the corresponding bits are different. Given two integers x and y, calculate the Hamming distance.
 
-**Example:**
+### Example 1:
 
 Input: x = 1, y = 4
 ```
@@ -86,6 +86,7 @@ Given two binary trees and imagine that when you put one of them to cover the ot
 
 You need to merge them into a new binary tree. The merge rule is that if two nodes overlap, then sum node values up as the new value of the merged node. Otherwise, the NOT null node will be used as the node of new tree.
 
+### Example 1:
 ```
 Input:
 [1,3,2,5]
@@ -102,12 +103,12 @@ Initially, there is a Robot at position (0, 0). Given a sequence of its moves, j
 
 The move sequence is represented by a string. And each move is represent by a character. The valid robot moves are R (Right), L (Left), U (Up) and D (down). The output should be true or false representing whether the robot makes a circle.
 
-**Example 1:**
+### Example 1:
 ```
 Input: "UD"
 Output: true
 ```
-**Example 2:**
+### Example 2:
 ```
 Input: "LL"
 Output: false
@@ -118,7 +119,7 @@ Output: false
 
 Given a non-negative integer represented as a non-empty array of digits, plus one to the integer. You may assume the integer do not contain any leading zero, except the number 0 itself. The digits are stored such that the most significant digit is at the head of the list.
 
-**Example 1:**
+### Example 1:
 Given 9999, we would add one and output the result.
 ```
 Input: [9, 9, 9, 9]
@@ -129,11 +130,11 @@ Output: [1, 0, 0, 0, 0]
 ## Reverse Integer
 Reverse digits of an integer.
 
-**Example 1:**
+### Example 1:
 ```
 x = 123, return 321
 ```
-**Example 2:**
+### Example 2:
 ```
 x = -123, return -321
 ```
@@ -146,7 +147,7 @@ The input is assumed to be a 32-bit signed integer. Your function should return 
 Given an array of integers, return indices of the two numbers such that they add up to a specific target.
 You may assume that each input would have exactly one solution, and you may not use the same element twice.
 
-**Example:**
+### Example 1:
 
   ```python
   nums = [2, 7, 11, 15]
