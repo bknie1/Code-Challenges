@@ -1,15 +1,25 @@
 # LeetCode
 Problems and solutions.
 
+#### Interview Flags:
+  - *'A': Amazon*
+  - *'F': Facebook*
+  - *'G': Google*
+  - *'L': LinkedIn*
+
 ## Table of Contents
+
+  
 * [Array Partition I](#array-partition-i)
 * [Big Countries](#big-countries)
 * [Binary Tree Merge](#binary-tree-merge)
-* [Find the Median of Two Sorted Arrays](#median-of-two-sorted)
+* [Find the Median of Two Sorted Arrays](#median-of-two-sorted) ***- G***
 * [Hamming Distance](#hamming-distance)
-* [Judge Route Circle](#judge-route-circle)
+* [Judge Route Circle](#judge-route-circle) ***- G***
 * [Two Sum](#two-sum)
-* [Valid Parentheses](#valid-parentheses)
+* [Valid Parentheses](#valid-parentheses) ***- G***
+
+## Google Preparation
 
 <a name="array-partition-i"></a>
 ## Array Partition I
@@ -40,7 +50,7 @@ A country is big if it has an area of bigger than 3 million (3000000) square km 
 Write a SQL solution to output big countries' **name**, **population** and **area**.
 
 <a name="median-of-two-sorted"></a>
-## Find the Median of Two Sorted Arrays
+## Find the Median of Two Sorted Arrays ***- G***
 There are two sorted arrays nums1 and nums2 of size m and n respectively.
 
 Find the median of the two sorted arrays. The overall run time complexity should be O(log (m+n)).
@@ -90,7 +100,7 @@ Output:
 ```
 
 <a name="judge-route-circle"></a>
-## Judge Route Circle
+## Judge Route Circle ***- G***
 
 Initially, there is a Robot at position (0, 0). Given a sequence of its moves, judge if this robot makes a circle, which means it moves back to the original place.
 
@@ -124,7 +134,7 @@ You may assume that each input would have exactly one solution, and you may not 
   ```
 
 <a name="valid-parentheses"></a>
-## Valid Parentheses
+## Valid Parentheses ***- G***
 
 Given a string containing just the characters '(', ')', '{', '}', '[' and ']', determine if the input string is valid.
 
