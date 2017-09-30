@@ -10,6 +10,7 @@ Problems and solutions.
 * [Find the Median of Two Sorted Arrays](#median-of-two-sorted)
 * [Hamming Distance](#hamming-distance)
 * [Judge Route Circle](#judge-route-circle)
+* [Reverse Integer](#reverse-integer)
 * [Two Sum](#two-sum)
 * [Valid Parentheses](#valid-parentheses)
 
@@ -110,6 +111,16 @@ Output: true
 Input: "LL"
 Output: false
 ```
+
+<a name="reverse-integer"></a>
+## Reverse Integer
+Reverse digits of an integer.
+
+Example1: x = 123, return 321
+Example2: x = -123, return -321
+
+**Note:**
+The input is assumed to be a 32-bit signed integer. Your function should return 0 when the reversed integer overflows. This has to be done manually in Python because the interpreter just relies on available memory space.
 
 <a name="two-sum"></a>
 ## Two Sum
