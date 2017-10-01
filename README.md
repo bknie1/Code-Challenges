@@ -2,7 +2,6 @@
 Problems and solutions.
 
 ## Table of Contents
-
   
 * [Array Partition I](#array-partition-i)
 * [Big Countries](#big-countries)
@@ -10,12 +9,11 @@ Problems and solutions.
 * [Find the Median of Two Sorted Arrays](#median-of-two-sorted)
 * [Hamming Distance](#hamming-distance)
 * [Judge Route Circle](#judge-route-circle)
+* [Min Stack](#min-stack)
 * [Plus One](#plus-one)
 * [Reverse Integer](#reverse-integer)
 * [Two Sum](#two-sum)
 * [Valid Parentheses](#valid-parentheses)
-
-## Google Preparation
 
 <a name="array-partition-i"></a>
 ## Array Partition I
@@ -112,6 +110,29 @@ Output: true
 ```
 Input: "LL"
 Output: false
+```
+
+<a name="min-stack"></a>
+## Min Stack
+
+Design a stack that supports push, pop, top, and retrieving the minimum element in constant time.
+
+push(x) -- Push element x onto stack.
+pop() -- Removes the element on top of the stack.
+top() -- Get the top element.
+getMin() -- Retrieve the minimum element in the stack.
+
+### Example 1:
+
+```
+MinStack minStack = new MinStack();
+minStack.push(-2);
+minStack.push(0);
+minStack.push(-3);
+minStack.getMin();   --> Returns -3.
+minStack.pop();
+minStack.top();      --> Returns 0.
+minStack.getMin();   --> Returns -2.
 ```
 
 <a name="plus-one"></a>
