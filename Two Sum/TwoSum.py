@@ -10,10 +10,15 @@ def two_sum(nums, target):
     :rtype: List[int]
     """
     result_dict = {}
-    for i in range(len(nums)): # C0200
+
+    # Iterate through each of our values.
+    for i in range(len(nums)):
+        # Find the would-be complimentary value to our current number.
         aim = target - nums[i]
+        # Did we find it before? Return it's index and our current index.
         if aim in result_dict:
             return result_dict[aim], i
+        # No? Add this index as a potential match for an upcoming value.
         else:
             if not nums[i] in result_dict:
                 result_dict[nums[i]] = i
