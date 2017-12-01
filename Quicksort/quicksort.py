@@ -29,14 +29,14 @@ def partition(values, start, end):
     i, j = start, end # i, j will walk towards each other.
 
     while i < j: # Until we cross paths...
-        while i < j:
+        while i < j: # Walk i towards j. Look for swap opportunities.
             if values[i] > pivot:
                 values[i], values[j] = values[j], values[i]
                 break
             i += 1
 
         while j > i:
-            if values[j] < pivot:
+            if values[j] < pivot: # Walk j towards i. Look for swap opportunities.
                 values[j], values[i] = values[i], values[j]
                 break
             j -= 1
