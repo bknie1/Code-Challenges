@@ -12,9 +12,9 @@ class Solution
     static void Main(string[] args)
     {
         Leaderboard l = new Leaderboard();
-        l.PostData("Brandon", 1000);
-        l.PostData("Alok", 2000);
-        l.PostData("Mike", 3000);
+        l.PostData("Joe", 1000);
+        l.PostData("Mike", 2000);
+        l.PostData("Steve", 3000);
     }
 }
 
