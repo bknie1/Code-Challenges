@@ -1,122 +1,165 @@
-/*
-  Create a ranked leaderboard that allows you to add participants and update
-  their steps.
-
-
-*/
-
 using System;
+using System.Collections.Generic;
+using System.Linq;
 
-class Solution
+namespace Leaderboard
 {
-    static void Main(string[] args)
+    internal class Program
     {
-        Leaderboard l = new Leaderboard();
-        l.PostData("Joe", 1000);
-        l.PostData("Mike", 2000);
-        l.PostData("Steve", 3000);
-    }
-}
-
-class Leaderboard
-{
-  /*
-    The leaderboard owns a ranked (by steps) list of participants.
-    We can post new data (users) to the leaderboard or request
-  */
-    private List<Participant> rankedParticipants = new List<Participant>();
-
-    Leaderboard()
-    {
-      // Placeholder.
-    }
-
-    void PostData(string username, int steps)
-    {
-      /*
-        @arg string username
-        @arg int steps
-
-        Given a username and steps, either add the user or update the user's
-        data in our ranked participants list.
-
-        Considerations:
-          What if we pass in a larger value?
-
-        Complexity of PostData: n log(n)
-        Try O(n)? Dictionary to keep an index of the list I have.
-        Dictionary username, where the person is in the list.
-      */
-        foreach(var member in rankedParticipant)
+        public static void Main(string[] args)
         {
-            if(string.Equals(member.username, username))
+            var p = new Program(); // Resolving an error.
+            Tests();
+        }
+
+        private static void Tests()
+        {
+            var l = new Leaderboard();
+
+            // Add a bunch of users.
+            l.PostData("Alok", 1000);
+            l.PostData("Mike", 2000);
+            l.PostData("Kevin", 3000);
+            l.PostData("Jon", 4000);
+            l.PostData("Matt", 5000);
+            l.PostData("Ngoc", 6000);
+            l.PostData("Brandon", 9966);
+
+            // Alok really killed it today. Update his steps.
+            l.PostData("Alok", 10000);
+
+            l.ShowLeaderboard(5, "Mike"); // Outside top 5.
+            l.ShowLeaderboard(5, "Brandon"); // Inside top 5.
+        }
+    }
+
+    //------------------------------------------------------------------------------------------------------------------
+    internal class Leaderboard
+    {
+        /*
+          The leaderboard owns a ranked (by steps) list of participants. We can add or update users on the leaderboard
+          or request a 'top n' participants relative to a user.
+         */
+
+        private List<Participant> _rankedParticipants = new List<Participant>();
+
+        // public Leaderboard() {} // Default constructor is enough.
+        //--------------------------------------------------------------------------------------------------------------
+        public void PostData(string username, int steps)
+        {
+            /*
+              @arg string username
+              @arg int steps
+
+              Given a username and steps, either add the user or update the user's data in our ranked participants list.
+
+              Refactors:
+                  - Reduced nesting by continuing if we don't have a match.
+                  - What if we pass in a larger value?
+
+                  - Complexity of PostData: n log(n)
+                      - Try O(n)? Dictionary to keep an index of the list I have.
+                      - Dictionary username, where the person is in the list.
+
+                  - I didn't like that we called sort twice. Used a condition tree to determine whether or not we're
+                  adding a new participant and, either way, we sort at the end.
+            */
+            var present = false;
+            username = username.Trim(); // Sanitize. If user facing: Implement a counter-injection method.
+
+            foreach(var member in _rankedParticipants)
             {
-                member.steps += steps;
-                rank_sort();
+                if (!string.Equals(member.Username, username)) continue; // These users do not match.
+
+                // Else: These users match, so this user already exists in our db.
+                member.Steps += steps;
+                present = true;
+            }
+
+            // No match found, so add the new user.
+            if (!present) _rankedParticipants.Add(new Participant(username, steps));
+
+            RankSort(); // We sort regardless.
+        }
+        //--------------------------------------------------------------------------------------------------------------
+        public void ShowLeaderboard(int top, string username)
+        {
+            /*
+            Prints a human readable copy of our leaderboard with a target 'top' n participants. Will also print the
+            desired user in relation to those top participants if the user isn't already included in those results.
+
+            Refactors:
+                - If the user wasn't included in our top in: Inverted the condition to reduce nesting.
+                - Acknowledging Mike's concern about reaching for a top n that doesn't exist.
+
+            Ideas:
+                - Could use a params object[] args if we want a method that can deliver either a report or a report and
+                specific user data. Requre [0] (top), but make [1] (username) optional.
+            */
+
+            if (top > _rankedParticipants.Count)
+            {
+                var e = new ArgumentOutOfRangeException("", "Error: 'top' value exceeds current leaderboard.");
+                Console.WriteLine(e);
                 return;
             }
-        }
-        rankedParticipants.add(new Participant(username, steps));
-        rank_sort();
-    }
 
-    void ShowLeaderboard(int top, string username)
-    {
-      /*
-      Prints a human readable copy of our leaderboard with a target 'top' n
-      participants. Will also print the desired user in relation to those top
-      participants if the user isn't already included in those results.
+            username = username.Trim(); // Sanitize. If user facing: Implement a counter-injection method.
 
-      Example
-        ShowLeaderboard(3,"alok");
-          Jon 1 9000
-          Mike 2 8000
-          Brandon 3 7000
-          Alok   10 1000
-      */
-        bool is_present = false;
+            var isPresent = false;
 
-        for(var i = 0; i <= top; i++) // Print 'top' list.
-        {
-            Console.Write((i + 1) + " ");
-            rankedParticipant[i].toString();
-            if(string.Equals(rankedParticipant[i].username, username))
+            for(var i = 0; i < top; i++) // Print 'top' list.
             {
-                is_present = true;
-            }
-        }
-
-        if(!is_present) // User not printed, so add them.
-        {
-            for(var i = top + 1; i < rankedParticipants.length; i++)
-            {
-                if(string.Equals(rankedParticipants[i].username, username))
+                Console.Write((i + 1) + ".\t");
+                Console.WriteLine(_rankedParticipants[i].ToString());
+                if(string.Equals(_rankedParticipants[i].Username, username))
                 {
-                    Console.Write((i + 1) + " ");
-                    rankedParticipant[i].toString();
-                    return;
+                    isPresent = true;
                 }
             }
+
+            if(!isPresent) // User not printed, so add them.
+            {
+                for(var i = top + 1; i < _rankedParticipants.Count; i++)
+                {
+                    if (!string.Equals(_rankedParticipants[i].Username, username)) continue; // These users don't match.
+
+                    // This is the user we want; they exist in the db. Print their data.
+                    Console.Write((i + 1) + ".\t");
+                    Console.WriteLine(_rankedParticipants[i].ToString() + "\n");
+                    return;
+                }
+                Console.WriteLine("Error: User not found.");
+            }
+            Console.WriteLine();
         }
-        Console.WriteLine("Error: User not found.");
+        //--------------------------------------------------------------------------------------------------------------
+        private void RankSort()
+        {
+            _rankedParticipants = _rankedParticipants.OrderByDescending(o => o.Steps).ToList();
+        }
+        //--------------------------------------------------------------------------------------------------------------
     }
-}
-class Participant
-{
-  /*
-    Each participant has their own unique ID that tracks their progress.
-  */
-    public readonly string username; // UID
-    public int steps = 0; // The number of steps the user has walked in total.
-
-    Participant(string username, int steps)
+    //------------------------------------------------------------------------------------------------------------------
+    internal class Participant
     {
-        this.username = username;
-        this.steps = steps;
-    }
-
-    public override string ToString()
-    {
-        return $"{username} {steps}";
+        /*
+          Each participant has their own unique ID that tracks their progress.
+         */
+        public readonly string Username;
+        public int Steps = 0;
+        //--------------------------------------------------------------------------------------------------------------
+        public Participant(string username, int steps)
+        {
+            this.Username = username;
+            this.Steps += steps;
+        }
+        //--------------------------------------------------------------------------------------------------------------
+        public override string ToString()
+        {
+            // return $"{Username} {Steps}"; // Rider says this is an old C# 6.0 feature.
+            return string.Concat(Username, "\t", Steps);
+        }
+        //--------------------------------------------------------------------------------------------------------------
     }
 }
